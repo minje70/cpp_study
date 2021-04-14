@@ -47,6 +47,6 @@ public:
 	void		SetDarkestSecret(std::string str);
 
 	void		AddContact();
-	
+	void		SearchContactInput();
 };
 #endif

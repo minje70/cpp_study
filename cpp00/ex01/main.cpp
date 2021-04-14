@@ -9,7 +9,7 @@ int	main(void)
 
 	while (true)
 	{
-		std::cout << "ADD : 전화번호 추가\nSEARCH : 전화번호 찾기\nEXIT : 종료" << std::endl << ":";
+		book.PrintManual();
 		std::cin >> cmd;
 		if (cmd == "ADD")
 			book.AddContact();

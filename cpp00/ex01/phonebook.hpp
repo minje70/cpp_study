@@ -14,4 +14,6 @@ public:
 	void		ExitContact();
 	void		AddContact();
 	void		SearchContact();
+	void		SearchContactInput();
+	void		PrintManual();
 };
