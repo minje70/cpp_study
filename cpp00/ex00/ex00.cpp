@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 void	print_upper(char *str)
 {
@@ -16,7 +17,8 @@ void	print_upper(char *str)
 
 int		main(int ac, char **av)
 {
-	int	i;
+	std::string	str;
+	int			i;
 
 	if (ac < 2)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
