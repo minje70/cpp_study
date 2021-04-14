@@ -48,7 +48,11 @@ void		Phonebook::SearchContactInput()
 		std::cout << "index를 입력하세요 : ";
 		std::cin >> input;
 		if (std::cin.fail())
-			std::cout << "잘못된 input을 선택했습니다.\n:";
+		{
+			std::cin.clear();
+			std::cin.ignore();
+			std::cout << "잘못된 input을 선택했습니다.\n";
+		}
 		else if (input >= 0 && input < this->total)
 		{
 			std::cout << "firstName : " << this->contacts[input].GetFirstName() << std::endl;
