@@ -1,5 +1,6 @@
 #include "phonebook.hpp"
 #include "contact.hpp"
+#include <iomanip>
 
 Phonebook::Phonebook()
 {
@@ -38,5 +39,26 @@ void		Phonebook::AddContact()
 
 void		Phonebook::SearchContact()
 {
-	
+	int	i;
+
+	i = -1;
+	std::cout << "---------------------------------------------\n";
+	std::cout << "|--index---|first name|last name-|-nickname-|\n";
+	while (++i < this->GetTotal())
+	{
+		std::cout << "|" << std::setw(10) << i << "|";
+		if (this->contacts[i].GetFirstName().length() >= 11)
+			std::cout << std::setw(9) << this->contacts[i].GetFirstName() << ".|\n";
+		else
+			std::cout << std::setw(10) << this->contacts[i].GetFirstName() << "|\n";
+		if (this->contacts[i].GetLastName().length() >= 11)
+			std::cout << std::setw(9) << this->contacts[i].GetLastName() << ".|\n";
+		else
+			std::cout << std::setw(10) << this->contacts[i].GetLastName() << "|\n";
+		if (this->contacts[i].GetNickName().length() >= 11)
+			std::cout << std::setw(9) << this->contacts[i].GetNickName() << ".|\n";
+		else
+			std::cout << std::setw(10) << this->contacts[i].GetNickName() << "|\n";
+	}
+	std::cout << "---------------------------------------------\n";
 }

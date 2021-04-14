@@ -1,8 +1,10 @@
-NAME = megaphone
+NAME = awesomePhoneBook
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I ./
-EXEC_SRCS = ex00.cpp
+EXEC_SRCS = contact.cpp \
+			phonebook.cpp \
+			main.cpp
 
 # EXEC_DIR = ./srcs/
 # EXEC = $(addprefix $(EXEC_DIR), $(EXEC_SRCS))
