@@ -48,13 +48,13 @@ void		Phonebook::SearchContact()
 	{
 		std::cout << "|" << std::setw(10) << i << "|";
 		if (this->contacts[i].GetFirstName().length() >= 11)
-			std::cout << std::setw(9) << this->contacts[i].GetFirstName() << ".|\n";
+			std::cout << std::setw(9) << this->contacts[i].GetFirstName() << ".|";
 		else
-			std::cout << std::setw(10) << this->contacts[i].GetFirstName() << "|\n";
+			std::cout << std::setw(10) << this->contacts[i].GetFirstName() << "|";
 		if (this->contacts[i].GetLastName().length() >= 11)
-			std::cout << std::setw(9) << this->contacts[i].GetLastName() << ".|\n";
+			std::cout << std::setw(9) << this->contacts[i].GetLastName() << ".|";
 		else
-			std::cout << std::setw(10) << this->contacts[i].GetLastName() << "|\n";
+			std::cout << std::setw(10) << this->contacts[i].GetLastName() << "|";
 		if (this->contacts[i].GetNickName().length() >= 11)
 			std::cout << std::setw(9) << this->contacts[i].GetNickName() << ".|\n";
 		else
