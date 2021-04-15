@@ -47,7 +47,8 @@ void		Phonebook::SearchContactInput()
 	{
 		std::cout << "index를 입력하세요 : ";
 		std::cin >> input;
-		if (std::cin.fail())
+		std::cout << "입력된 숫자 : " << input << std::endl;
+		if (!std::cin)
 		{
 			std::cin.clear();
 			std::cin.ignore();
@@ -101,12 +102,17 @@ void		Phonebook::SearchContact()
 	this->SearchContactInput();
 }
 
+void		printOneLine(std::string eng, std::string kor)
+{
+	std::cout << "|" << std::setw(6) << eng << " : " << std::setw(16) << kor << "|" << std::endl;
+}
+
 void		Phonebook::PrintManual()
 {
-	std::cout << "-------------------------\n";
-	std::cout << "|" << std::setw(29) << "ADD : 전화번호 추가" << "|" << std::endl;
-	std::cout << "|" << std::setw(29) << "SEARCH : 전화번호 찾기" << "|" << std::endl;
-	std::cout << "|" << std::setw(25) << "EXIT : 종료" << "|" << std::endl;
-	std::cout << "-------------------------\n";
+	std::cout << "---------------------------\n";
+	printOneLine("ADD", "add phonebook");
+	printOneLine("SEARCH", "search phonebook");
+	printOneLine("EXIT", "exit phoneBook");
+	std::cout << "---------------------------\n";
 	std::cout << ":";
 }
