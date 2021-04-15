@@ -19,8 +19,6 @@ private:
 	std::string	underwearColor;
 	std::string	darkestSecret;
 
-	std::string	index;
-
 public:
 	Contacts();
 	~Contacts();
