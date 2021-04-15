@@ -1,6 +1,7 @@
 #include "phonebook.hpp"
 #include "contact.hpp"
 #include <iomanip>
+#include <string>
 
 Phonebook::Phonebook()
 {
@@ -37,42 +38,57 @@ void		Phonebook::AddContact()
 	}
 }
 
+int			isNumber(std::string str)
+{
+	int	i;
+	int	len;
+
+	i = -1;
+	len = str.length();
+	while (++i < len)
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (false);
+	}
+	return (true);
+}
+
 void		Phonebook::SearchContactInput()
 {
-	int	input;
-	int	i;
+	std::string	input;
+	int			iInput;
+	int			i;
 
 	i = -1;
 	while (++i < 5)
 	{
 		std::cout << "index를 입력하세요 : ";
 		std::cin >> input;
-		std::cout << "입력된 숫자 : " << input << std::endl;
-		if (!std::cin)
+		if (!isNumber(input))
 		{
-			std::cin.clear();
-			std::cin.ignore();
-			std::cout << "잘못된 input을 선택했습니다.\n";
+			std::cout << "숫자가 아니야!!!\n";
+			continue ;
 		}
-		else if (input >= 0 && input < this->total)
+		iInput = std::stoi(input);
+		if (iInput >= 0 && iInput < this->total)
 		{
-			std::cout << "firstName : " << this->contacts[input].GetFirstName() << std::endl;
-			std::cout << "lastName : " << this->contacts[input].GetLastName() << std::endl;
-			std::cout << "nickName : " << this->contacts[input].GetNickName() << std::endl;
-			std::cout << "login : " << this->contacts[input].GetLogin() << std::endl;
-			std::cout << "postalAddress : " << this->contacts[input].GetPostalAddress() << std::endl;
-			std::cout << "emailAddress : " << this->contacts[input].GetEmailAddress() << std::endl;
-			std::cout << "phoneNumber : " << this->contacts[input].GetPhoneNumber() << std::endl;
-			std::cout << "birthdayDate : " << this->contacts[input].GetBirthdayDate() << std::endl;
-			std::cout << "favoriteMeal : " << this->contacts[input].GetFavoriteMeal() << std::endl;
-			std::cout << "underwearColor : " << this->contacts[input].GetUnderwearColor() << std::endl;
-			std::cout << "darkestSecret : " << this->contacts[input].GetDarkestSecret() << std::endl;
+			std::cout << "firstName : " << this->contacts[iInput].GetFirstName() << std::endl;
+			std::cout << "lastName : " << this->contacts[iInput].GetLastName() << std::endl;
+			std::cout << "nickName : " << this->contacts[iInput].GetNickName() << std::endl;
+			std::cout << "login : " << this->contacts[iInput].GetLogin() << std::endl;
+			std::cout << "postalAddress : " << this->contacts[iInput].GetPostalAddress() << std::endl;
+			std::cout << "emailAddress : " << this->contacts[iInput].GetEmailAddress() << std::endl;
+			std::cout << "phoneNumber : " << this->contacts[iInput].GetPhoneNumber() << std::endl;
+			std::cout << "birthdayDate : " << this->contacts[iInput].GetBirthdayDate() << std::endl;
+			std::cout << "favoriteMeal : " << this->contacts[iInput].GetFavoriteMeal() << std::endl;
+			std::cout << "underwearColor : " << this->contacts[iInput].GetUnderwearColor() << std::endl;
+			std::cout << "darkestSecret : " << this->contacts[iInput].GetDarkestSecret() << std::endl;
 			return ;
 		}
 		else
-			std::cout << "잘못된 input을 선택했습니다.\n";
+			std::cout << "잘못된 input을 입력했습니다.\n";
 	}
-	std::cout << "5번의 기회가 지났군요... 다시 시도하세요..." << std::endl;
+	std::cout << "5번의 기회가 지났군요. 다시 시도하세요." << std::endl;
 }
 
 void		Phonebook::SearchContact()
@@ -98,6 +114,7 @@ void		Phonebook::SearchContact()
 		else
 			std::cout << std::setw(10) << this->contacts[i].GetNickName() << "|\n";
 	}
+	
 	std::cout << "---------------------------------------------\n";
 	this->SearchContactInput();
 }
