@@ -64,12 +64,14 @@ void		Phonebook::SearchContactInput()
 	{
 		std::cout << "index를 입력하세요 : ";
 		std::cin >> input;
+		if (std::cin.eof())
+			exit(1);
 		if (!isNumber(input))
 		{
 			std::cout << "숫자가 아니야!!!\n";
 			continue ;
 		}
-		iInput = std::stoi(input);
+		iInput = atoi(input.c_str());
 		if (iInput >= 0 && iInput < this->total)
 		{
 			std::cout << "firstName : " << this->contacts[iInput].GetFirstName() << std::endl;

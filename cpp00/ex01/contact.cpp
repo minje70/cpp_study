@@ -123,4 +123,9 @@ void		Contacts::AddContact()
 	std::cout << "darkest secret : ";
 	std::cin >> this->darkestSecret;
 	std::cout << "입력 끝\n";
+	if (std::cin.eof())
+	{
+		std::cout << "\neof가 감지되었습니다!!!!" << std::endl;
+		exit (-1);
+	}
 }

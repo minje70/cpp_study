@@ -11,6 +11,8 @@ int	main(void)
 	{
 		book.PrintManual();
 		std::cin >> cmd;
+		if (std::cin.eof())
+			return (-1);
 		if (cmd == "ADD")
 			book.AddContact();
 		else if (cmd == "SEARCH")
