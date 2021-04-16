@@ -16,7 +16,6 @@ int			Pony::GetAge()
 {
 	return (this->age);
 }
-	
 
 void	Pony::SetName(std::string name)
 {
