@@ -1,8 +1,8 @@
-NAME = megaphone
+NAME = replace
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I ./
-EXEC_SRCS = megaphone.cpp
+EXEC_SRCS = ex07.cpp
 
 EXEC_OBJS = $(EXEC_SRCS:.cpp=.o)
 

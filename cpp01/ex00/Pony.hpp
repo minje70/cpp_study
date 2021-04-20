@@ -9,7 +9,7 @@ private:
 	std::string	name;
 	int			age;
 public:
-	Pony(/* args */);
+	Pony();
 	~Pony();
 	std::string	GetName();
 	int			GetAge();

@@ -15,6 +15,7 @@ public:
 	~Zombie();
 
 	void	announce();
+	void	setNameType(std::string name, std::string type);
 };
 
 #endif

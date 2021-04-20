@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 void	print_upper(char *str)
 {
@@ -17,7 +16,6 @@ void	print_upper(char *str)
 
 int		main(int ac, char **av)
 {
-	std::string	str;
 	int			i;
 
 	if (ac < 2)
