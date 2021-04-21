@@ -11,10 +11,12 @@ int main(int ac, char **av)
 		return 1;
 	}
 	std::string	str;
+	std::string fileName(av[1]);
 	std::string	s1(av[2]);
+	std::string	s2(av[3]);
 	int			i;
-	fin.open(av[1]);
-	fout.open("FILENAME.replace");
+	fin.open(fileName);
+	fout.open(fileName + ".replace");
 	if (fin.is_open())
 	{
 		while (!fin.eof())
@@ -25,8 +27,8 @@ int main(int ac, char **av)
 			while ((i = (int)str.find(s1, i)) != -1)
 			{
 				// 바꾸고
-				str.replace(i, s1.length(), av[3]);
-				i++;
+				str.replace(i, s1.length(), s2);
+				i += s2.length();
 			}
 			fout << str;
 			if (!fin.eof())
