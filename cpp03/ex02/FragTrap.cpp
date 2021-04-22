@@ -36,7 +36,7 @@ FragTrap::FragTrap(std::string name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << _name << ": \"난 죽었다! 난 죽었어 오 하나님 맙소사 난 죽었어!\"\n" << _name << "이(가) 파괴되었습니다.\n" << std::endl;
+	std::cout << _name << ": \"난 죽었다! 난 죽었어 오 하나님 맙소사 난 죽었어!\n\"" << _name << "이(가) 파괴되었습니다.\n" << std::endl;
 }
 
 FragTrap	&FragTrap::operator = (const FragTrap &frag)
@@ -57,13 +57,13 @@ FragTrap	&FragTrap::operator = (const FragTrap &frag)
 
 void	FragTrap::rangedAttack(std::string const &target)
 {
-	std::cout << _name << ": \"핀 잡아 당겨 던져!\"\n";
+	std::cout << _name << ": 핀 잡아 당겨 던져!\n";
 	std::cout << "<" << _name << ">가 <" << target << ">에게 원거리 공격으로 <" << _rangedAttackDamage << ">의 데미지를 입혔습니다!!!!!\n" << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const &target)
 {
-	std::cout << _name << ": \"죽여, 재 장전! 죽이고, 재 장전! 죽여! 재 장전!!\"\n";
+	std::cout << _name << ": 죽여, 재 장전! 죽이고, 재 장전! 죽여! 재 장전!!\n";
 	std::cout << "<" << _name << ">가 <" << target << ">에게 일반공격으로 <" << _meleeAttackDamage << ">의 데미지를 입혔습니다!!!!!\n" << std::endl;
 }
 
@@ -76,11 +76,11 @@ void	FragTrap::takeDamage(unsigned int amount)
 		realDamage = _hitPoint;
 	if (realDamage <= 0)
 	{
-		std::cout << _name << ": " << "\"하나도 안아파!!\"\n";
+		std::cout << _name << ": " << "하나도 안아파!!\n";
 		realDamage = 0;
 	}
 	else
-		std::cout << _name << ": " << "\"내 로봇 육체! 아아!!!\"\n";
+		std::cout << _name << ": " << "내 로봇 육체! 아아!!!\n";
 	std::cout << _name << "이(가) " << realDamage << "의 피해를 입었습니다!!\n" << std::endl;
 	_hitPoint -= realDamage;
 }
@@ -94,9 +94,9 @@ void	FragTrap::beRepaired(unsigned int amount)
 	else
 		realAmount = amount;
 	if (_hitPoint >= _maxHitPoint)
-		std::cout << _name << ": " << "\"더 이상 찰 체력이 없어!!\"\n";
+		std::cout << _name << ": " << "더 이상 찰 체력이 없어!!\n";
 	else
-		std::cout << _name << ": " << "\"달콤한 생명 주스!\"\n";
+		std::cout << _name << ": " << "달콤한 생명 주스!\n";
 	std::cout << _name << "이(가) " << realAmount << "만큼 회복하였습니다.\n" << std::endl; 
 	_hitPoint += realAmount;
 }
