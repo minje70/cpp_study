@@ -3,7 +3,7 @@
 
 int main()
 {
-	FragTrap a("mijeong");
+	FragTrap a = FragTrap("mijeong");
 	FragTrap *b;
 
 	b = new FragTrap;
@@ -40,5 +40,19 @@ int main()
 	aa.challengeNewcomer();
 	aa.challengeNewcomer();
 	aa.challengeNewcomer();
+
+	ClapTrap aaa("클랩");
+	ClapTrap *bbb;
+
+	bbb = new ClapTrap;
+	aaa.rangedAttack("hyeonkim");
+	aaa.meleeAttack("hihi");
+	aaa.takeDamage(40);
+	aaa.takeDamage(30);
+	aaa.takeDamage(90);
+	delete bbb;
+	aaa.takeDamage(30);
+	aaa.beRepaired(150);
+
 	return 0;
 }
