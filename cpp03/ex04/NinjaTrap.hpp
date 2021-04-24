@@ -5,7 +5,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class NinjaTrap: public ClapTrap
+class NinjaTrap: public virtual ClapTrap
 {
 private:
 
@@ -15,6 +15,9 @@ public:
 	~NinjaTrap();
 
 	NinjaTrap& operator = (const NinjaTrap& ninja);
+	void	rangedAttack(std::string const &target);
+	void	meleeAttack(std::string const &target);
+
 	void	ninjaShoebox(const NinjaTrap& ninja);
 	void	ninjaShoebox(const ClapTrap& clap);
 	void	ninjaShoebox(const FragTrap& frag);

@@ -10,7 +10,7 @@ int	main(void)
 	while (true)
 	{
 		book.PrintManual();
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
 		if (std::cin.eof())
 			return (-1);
 		if (cmd == "ADD")

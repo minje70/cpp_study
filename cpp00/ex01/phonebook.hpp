@@ -21,4 +21,4 @@ public:
 	void		PrintManual();
 };
 
-#endif PHONEBOOK_HPP
+#endif

@@ -101,27 +101,27 @@ void		Contacts::SetDarkestSecret(std::string str)
 void		Contacts::AddContact()
 {
 	std::cout << "first name : ";
-	std::cin >> this->firstName;
+	std::getline(std::cin, this->firstName);
 	std::cout << "last name : ";
-	std::cin >> this->lastName;
+	std::getline(std::cin, this->lastName);
 	std::cout << "nickname : ";
-	std::cin >> this->nickName;
+	std::getline(std::cin, this->nickName);
 	std::cout << "login : ";
-	std::cin >> this->login;
+	std::getline(std::cin, this->login);
 	std::cout << "postal address : ";
-	std::cin >> this->postalAddress;
+	std::getline(std::cin, this->postalAddress);
 	std::cout << "email address : ";
-	std::cin >> this->emailAddress;
+	std::getline(std::cin, this->emailAddress);
 	std::cout << "phone number : ";
-	std::cin >> this->phoneNumber;
+	std::getline(std::cin, this->phoneNumber);
 	std::cout << "birthday date : ";
-	std::cin >> this->birthdayDate;
+	std::getline(std::cin, this->birthdayDate);
 	std::cout << "favorite meal : ";
-	std::cin >> this->favoriteMeal;
+	std::getline(std::cin, this->favoriteMeal);
 	std::cout << "underwear color : ";
-	std::cin >> this->underwearColor;
+	std::getline(std::cin, this->underwearColor);
 	std::cout << "darkest secret : ";
-	std::cin >> this->darkestSecret;
+	std::getline(std::cin, this->darkestSecret);
 	std::cout << "입력 끝\n";
 	if (std::cin.eof())
 	{

@@ -63,7 +63,7 @@ void		Phonebook::SearchContactInput()
 	while (++i < 5)
 	{
 		std::cout << "index를 입력하세요 : ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (std::cin.eof())
 			exit(1);
 		if (!isNumber(input))

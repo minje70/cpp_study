@@ -9,7 +9,7 @@ NinjaTrap::NinjaTrap(): ClapTrap()
 	_rangedAttackDamage = 5;
 	_armorDamageReduction = 0;
 	std::cout << "<NinjaTrap>\n";
-	std::cout << "\"이름 없는 닌자 등장!!\n\"" << _name << "이(가) 생성되었습니다.\n" << std::endl;
+	std::cout << "\"이름 없는 닌자 등장!!\"\n" << _name << "이(가) 생성되었습니다.\n" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string name)
@@ -22,7 +22,7 @@ NinjaTrap::NinjaTrap(std::string name)
 	_armorDamageReduction = 0;
 	_name = name;
 	std::cout << "<NinjaTrap>\n";
-	std::cout << "\"닌자 등장!!\n\"" << _name << "이(가) 생성되었습니다.\n" << std::endl;
+	std::cout << "\"닌자 등장!!\"\n" << _name << "이(가) 생성되었습니다.\n" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
@@ -48,22 +48,34 @@ NinjaTrap& NinjaTrap::operator = (const NinjaTrap& ninja)
 	return *this;
 }
 
+void	NinjaTrap::rangedAttack(std::string const &target)
+{
+	std::cout << _name << ": 핀 잡아 당겨 던져!\n";
+	std::cout << "<" << _name << ">가 <" << target << ">에게 원거리 공격으로 <" << _rangedAttackDamage << ">의 데미지를 입혔습니다!!!!!\n" << std::endl;
+}
+
+void	NinjaTrap::meleeAttack(std::string const &target)
+{
+	std::cout << _name << ": 죽여, 재 장전! 죽이고, 재 장전! 죽여! 재 장전!!\n";
+	std::cout << "<" << _name << ">가 <" << target << ">에게 일반공격으로 <" << _meleeAttackDamage << ">의 데미지를 입혔습니다!!!!!\n" << std::endl;
+}
+
 void	NinjaTrap::ninjaShoebox(const NinjaTrap& ninja)
 {
-	std::cout << "<ninja>를 인자로 가지는 ninjashoebox!!!" << ninja.getName() << std::endl;
+	std::cout << "<ninja>를 인자로 가지는 ninjashoebox!!!\n" << ninja.getName() << std::endl << std::endl;;
 }
 
 void	NinjaTrap::ninjaShoebox(const ClapTrap& clap)
 {
-	std::cout << "<clap>을 인자로 가지는 ninjashoebox!!!" << clap.getName() << std::endl;
+	std::cout << "<clap>을 인자로 가지는 ninjashoebox!!!\n" << clap.getName() << std::endl << std::endl;;
 }
 
 void	NinjaTrap::ninjaShoebox(const FragTrap& frag)
 {
-	std::cout << "<frag>를 인자로 가지는 ninjashoebox!!!" << frag.getName() << std::endl;
+	std::cout << "<frag>를 인자로 가지는 ninjashoebox!!!\n" << frag.getName() << std::endl << std::endl;;
 }
 
 void	NinjaTrap::ninjaShoebox(const ScavTrap& scav)
 {
-	std::cout << "<scav>를 인자로 가지는 ninjashoebox!!!" << scav.getName() << std::endl;
+	std::cout << "<scav>를 인자로 가지는 ninjashoebox!!!\n" << scav.getName() << std::endl << std::endl;;
 }
