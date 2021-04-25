@@ -4,6 +4,10 @@
 
 ### keyword
 
+# 안녕
+
+#### 안녕
+
 - getline
 - std::string
 - namespace
@@ -28,4 +32,17 @@
 
 ### 궁금한 것
 
-- 
+
+
+## cpp04
+
+### keyword
+
+- 순수가상함수
+
+### 해야할 것
+
+### 궁금한 것
+
+- AWeapon의 소멸자에 왜 virtual을 붙였는가??
+
