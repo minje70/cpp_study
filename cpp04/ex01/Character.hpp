@@ -3,12 +3,14 @@
 
 #include "AWeapon.hpp"
 #include "Enemy.hpp"
+#include "PlasmaRifle.hpp"
 
 class Character
 {
 private:
 	std::string	_name;
 	int			_actionPoint;
+	int			_maxAP;
 	AWeapon		*_weapon;
 	
 	Character();
@@ -23,9 +25,11 @@ public:
 	void	equip(AWeapon* weapon);
 	void	attack(Enemy* enemy);
 
-	std::string virtual getName() const;
+	std::string const	getName() const;
 	int		getAP() const;
 	AWeapon	*getAWeapon() const;
 };
+
+std::ostream& operator << (std::ostream& out, const Character& character);
 
 #endif

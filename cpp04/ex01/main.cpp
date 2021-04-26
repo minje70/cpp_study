@@ -4,16 +4,47 @@
 #include "Enemy.hpp"
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
+#include "Character.hpp"
+
+// int main()
+// {
+	// SuperMutant rad;
+	// Enemy *enemy = &rad;
+
+	// std::cout << "enemy->hp : " << enemy->getHP() << "\nenemy->type : " << enemy->getType() << std::endl << std::endl;
+	// for (int i = 0; i < 8; i++)
+	// {
+	// 	enemy->takeDamage(30);
+	// }
+
+	// Character	c1("mijeong");
+	// Character	c2(c1);
+	// return 0;
+// }
 
 int main()
 {
-	SuperMutant rad;
-	Enemy *enemy = &rad;
+	Character* me = new Character("me");
 
-	std::cout << "enemy->hp : " << enemy->getHP() << "\nenemy->type : " << enemy->getType() << std::endl << std::endl;
-	for (int i = 0; i < 8; i++)
-	{
-		enemy->takeDamage(30);
-	}
+	std::cout << *me;
+
+	Enemy* b = new RadScorpion();
+
+	AWeapon* pr = new PlasmaRifle();
+	AWeapon* pf = new PowerFist();
+
+	me->equip(pr);
+	std::cout << *me;
+	me->equip(pf);
+
+	me->attack(b);
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+
 	return 0;
 }
