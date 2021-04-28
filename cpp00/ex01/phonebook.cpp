@@ -45,6 +45,8 @@ int			isNumber(std::string str)
 
 	i = -1;
 	len = str.length();
+	if (len <= 0)
+		return (false);
 	while (++i < len)
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
