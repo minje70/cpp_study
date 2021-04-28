@@ -9,10 +9,7 @@ class ISpaceMarine
 private:
 
 public:
-	ISpaceMarine();
-	ISpaceMarine(const ISpaceMarine &from);
-	virtual ~ISpaceMarine();
-	ISpaceMarine	&operator=(const ISpaceMarine &rvalue);
+	virtual ~ISpaceMarine() {}
 
 	virtual ISpaceMarine* clone() const = 0;
 	virtual void battleCry() const = 0;
