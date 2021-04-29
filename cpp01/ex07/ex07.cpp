@@ -34,8 +34,8 @@ int main(int ac, char **av)
 			if (!fin.eof())
 				fout << std::endl;
 		}
-		fin.close();
-		fout.close();
 	}
+	fin.close();
+	fout.close();
 	return 0;
 }

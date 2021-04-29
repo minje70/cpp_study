@@ -12,7 +12,7 @@ std::string	Brain::identify() const
 
 Brain::Brain()
 {
-	this->data = "empyty";
+	this->data = "empty";
 }
 
 Brain::~Brain()

@@ -6,7 +6,7 @@ EXEC_SRCS = ex07.cpp
 
 EXEC_OBJS = $(EXEC_SRCS:.cpp=.o)
 
-%.o : %.c
+%.o : %.cpp
 	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDE)
 
 all : $(NAME)

@@ -31,9 +31,9 @@ public:
 	void	beSigned(Bureaucrat& bureaucrat);
 
 	const std::string&	getName() const;
-	int			getSignedGrade() const;
-	int			getExecGrade() const;
-	bool			getSigned() const;
+	int					getSignedGrade() const;
+	int					getExecGrade() const;
+	bool				getSigned() const;
 };
 
 std::ostream& operator << (std::ostream& out, Form& form);

@@ -1,6 +1,7 @@
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
 
+//생성자, 소멸자.
 int main()
 {
 	Zombie	*zombie[10];
