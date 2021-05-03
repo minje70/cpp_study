@@ -53,6 +53,10 @@ const char* Form::GradeTooLowException::what() const throw()
 {
 	return "Error: Grade Too low!!\n";
 }
+const char* Form::CheckExecuteException::what() const throw()
+{
+	return "Error: Fail Execute!!\n";
+}
 
 void	Form::beSigned(Bureaucrat& bureaucrat)
 {

@@ -27,6 +27,11 @@ public:
 	public:
 		virtual const char* what() const throw();
 	};
+	class CheckExecuteException: public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	}
 
 	void	beSigned(Bureaucrat& bureaucrat);
 
@@ -34,6 +39,8 @@ public:
 	int					getSignedGrade() const;
 	int					getExecGrade() const;
 	bool				getSigned() const;
+
+	virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream& operator << (std::ostream& out, Form& form);

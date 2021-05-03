@@ -7,14 +7,14 @@
 class ShrubberyCreationForm: public Form
 {
 private:
-
-public:
 	ShrubberyCreationForm();
+public:
+	ShrubberyCreationForm(std::string const & name);
 	ShrubberyCreationForm(const ShrubberyCreationForm &from);
 	~ShrubberyCreationForm();
 	ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &rvalue);
 
-	void	execute(Bureaucrat const & executor) const;
+	void	execute(Bureaucrat const & executor) const throw();
 };
 
 #endif

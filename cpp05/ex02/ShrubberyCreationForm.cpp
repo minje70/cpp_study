@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("noname", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const & name): Form(name, 145, 137)
 {
 }
 

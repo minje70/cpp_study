@@ -12,7 +12,7 @@ private:
 public:
 	Fixed();
 	Fixed(const int value);
-	Fixed(float value);
+	Fixed(const float value);
 	// 복사 생성자. for 깊은 복사.
 	Fixed(const Fixed &cv);
 	~Fixed();
