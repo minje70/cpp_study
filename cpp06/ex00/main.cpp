@@ -12,5 +12,7 @@ int main(int ac, char **av)
 	cast = new StringCast(av[1]);
 	cast->printChar();
 	cast->printInt();
+	cast->printFloat();
+	cast->printDouble();
 	return 0;
 }

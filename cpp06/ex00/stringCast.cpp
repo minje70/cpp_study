@@ -66,7 +66,6 @@ void	StringCast::printInt() const
 	{
 		std::cout << e.what() << '\n';
 	}
-	
 }
 
 void	StringCast::printFloat() const
@@ -75,15 +74,38 @@ void	StringCast::printFloat() const
 	try
 	{
 		result = atof(_value.c_str());
+		std::cout << "float: ";
+		if (result > std::numeric_limits<float>::max()
+			|| result < std::numeric_limits<float>::min())
+			throw StringCast::ImpasibleException();
+		std::cout << static_cast<float>(result);
+		if (static_cast<float>(result) - static_cast<int>(result) == 0)
+			std::cout << ".0";
+		std::cout << "f" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
-	
 }
 
 void	StringCast::printDouble() const
 {
-
+	double result;
+	try
+	{
+		result = atof(_value.c_str());
+		std::cout << "double: ";
+		if (result > std::numeric_limits<double>::max()
+			|| result < std::numeric_limits<double>::min())
+			throw StringCast::ImpasibleException();
+		std::cout << result;
+		if (static_cast<float>(result) - static_cast<int>(result) == 0)
+			std::cout << ".0";
+		std::cout << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << '\n';
+	}	
 }
