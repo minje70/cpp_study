@@ -19,10 +19,11 @@ void * serialize(void)
 	std::string* s1 = randomNumberString();
 	std::string* s2 = randomNumberString();
 	int* n = new int;
+	*n = rand() % 1000;
 
-	raw[0] = *reinterpret_cast<char *>(s1);
-	raw[24] = *reinterpret_cast<char *>(n);
-	raw[28] = *reinterpret_cast<char *>(s2);
+	*(reinterpret_cast<std::string *>(raw)) = *s1;
+	*(reinterpret_cast<int *>(raw) + 6) = *n;
+	*(reinterpret_cast<std::string *>(raw + 28)) = *s2;
 
 	delete s1;
 	delete s2;
