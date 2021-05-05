@@ -34,6 +34,11 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "<ClapTrap>\n" << _name << "이(가) 생성되었습니다.\n" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap& clap)
+{
+	*this = clap;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "<ClapTrap>\n" << _name << ": \"난 죽었다! 난 죽었어 오 하나님 맙소사 난 죽었어!\n\"" << _name << "이(가) 파괴되었습니다.\n" << std::endl;
@@ -41,17 +46,20 @@ ClapTrap::~ClapTrap()
 
 ClapTrap	&ClapTrap::operator = (const ClapTrap &clap)
 {
-	std::cout << "<ClapTrap>\n";
-	std::cout << "Assignation operator called" << std::endl;
-	_hitPoint = clap._hitPoint;
-	_maxHitPoint = clap._maxHitPoint;
-	_energyPoints = clap._energyPoints;
-	_maxEnergyPoints = clap._maxEnergyPoints;
-	_level = clap._level;
-	_meleeAttackDamage = clap._meleeAttackDamage;
-	_rangedAttackDamage = clap._rangedAttackDamage;
-	_armorDamageReduction = clap._armorDamageReduction;
-	_name = clap._name;
+	if (this != &clap)
+	{
+		std::cout << "<ClapTrap>\n";
+		std::cout << "Assignation operator called" << std::endl;
+		_hitPoint = clap._hitPoint;
+		_maxHitPoint = clap._maxHitPoint;
+		_energyPoints = clap._energyPoints;
+		_maxEnergyPoints = clap._maxEnergyPoints;
+		_level = clap._level;
+		_meleeAttackDamage = clap._meleeAttackDamage;
+		_rangedAttackDamage = clap._rangedAttackDamage;
+		_armorDamageReduction = clap._armorDamageReduction;
+		_name = clap._name;
+	}
 
 	return *this;
 }

@@ -12,6 +12,7 @@ private:
 public:
 	NinjaTrap();
 	NinjaTrap(std::string name);
+	NinjaTrap(const NinjaTrap& ninja);
 	~NinjaTrap();
 
 	NinjaTrap& operator = (const NinjaTrap& ninja);

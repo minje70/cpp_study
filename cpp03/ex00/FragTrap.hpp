@@ -12,13 +12,14 @@ private:
 	unsigned int	_energyPoints;
 	unsigned int	_maxEnergyPoints;
 	unsigned int	_level;
-	std::string	_name;
+	std::string		_name;
 	unsigned int	_meleeAttackDamage;
 	unsigned int	_rangedAttackDamage;
 	unsigned int	_armorDamageReduction;
 public:
 	FragTrap();
 	FragTrap(std::string name);
+	FragTrap(const FragTrap& from);
 	~FragTrap();
 
 	FragTrap &operator = (const FragTrap &frag);

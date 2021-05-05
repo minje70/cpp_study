@@ -11,11 +11,13 @@ private:
 public:
 	SuperTrap();
 	SuperTrap(std::string name);
+	SuperTrap(const SuperTrap& super);
 	~SuperTrap();
 
 	SuperTrap& operator = (const SuperTrap& super);
 	void	rangedAttack(std::string const &target);
 	void	meleeAttack(std::string const &target);
+	void	putStatus();
 };
 
 #endif

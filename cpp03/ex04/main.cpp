@@ -6,8 +6,10 @@
 int main()
 {
 	SuperTrap	super;
-	NinjaTrap *ninja;
+	NinjaTrap	*ninja;
+	SuperTrap	super2("mijeong");
 
+	super2.putStatus();
 	ninja = &super;
 	super.meleeAttack("mijeong");
 	super.rangedAttack("mijeong");

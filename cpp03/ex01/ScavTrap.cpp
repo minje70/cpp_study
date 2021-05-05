@@ -35,6 +35,11 @@ ScavTrap::ScavTrap(std::string name)
 	std::cout << _name << ": \"나는 개 약해...\n\"" << _name << "이(가) 생성되었습니다.\n" << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& from)
+{
+	*this = from;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << _name << ": \"내가 죽어도 아무도 기억해주지 않겠지....\"\n" << _name << "이(가) 파괴되었습니다.\n" << std::endl;
@@ -42,16 +47,19 @@ ScavTrap::~ScavTrap()
 
 ScavTrap	&ScavTrap::operator = (const ScavTrap &scav)
 {
-	std::cout << "Assignation operator called" << std::endl;
-	_hitPoint = scav._hitPoint;
-	_maxHitPoint = scav._maxHitPoint;
-	_energyPoints = scav._energyPoints;
-	_maxEnergyPoints = scav._maxEnergyPoints;
-	_level =scav._level;
-	_meleeAttackDamage = scav._meleeAttackDamage;
-	_rangedAttackDamage = scav._rangedAttackDamage;
-	_armorDamageReduction = scav._armorDamageReduction;
-	_name = scav._name;
+	if (this != &scav)
+	{
+		std::cout << "Assignation operator called" << std::endl;
+		_hitPoint = scav._hitPoint;
+		_maxHitPoint = scav._maxHitPoint;
+		_energyPoints = scav._energyPoints;
+		_maxEnergyPoints = scav._maxEnergyPoints;
+		_level =scav._level;
+		_meleeAttackDamage = scav._meleeAttackDamage;
+		_rangedAttackDamage = scav._rangedAttackDamage;
+		_armorDamageReduction = scav._armorDamageReduction;
+		_name = scav._name;
+	}
 
 	return *this;
 }

@@ -10,6 +10,7 @@ private:
 public:
 	FragTrap();
 	FragTrap(const std::string &name);
+	FragTrap(const FragTrap& frag);
 	~FragTrap();
 
 	FragTrap &operator = (const FragTrap &frag);

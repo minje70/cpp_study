@@ -25,6 +25,11 @@ NinjaTrap::NinjaTrap(std::string name)
 	std::cout << "\"닌자 등장!!\n\"" << _name << "이(가) 생성되었습니다.\n" << std::endl;
 }
 
+NinjaTrap::NinjaTrap(const NinjaTrap& ninja)
+{
+	*this = ninja;
+}
+
 NinjaTrap::~NinjaTrap()
 {
 	std::cout << "<NinjaTrap>\n";
@@ -33,17 +38,20 @@ NinjaTrap::~NinjaTrap()
 
 NinjaTrap& NinjaTrap::operator = (const NinjaTrap& ninja)
 {
-	std::cout << "<NinjaTrap>\n";
-	std::cout << "Assignation operator called" << std::endl;
-	_hitPoint = ninja._hitPoint;
-	_maxHitPoint = ninja._maxHitPoint;
-	_energyPoints = ninja._energyPoints;
-	_maxEnergyPoints = ninja._maxEnergyPoints;
-	_level =ninja._level;
-	_meleeAttackDamage = ninja._meleeAttackDamage;
-	_rangedAttackDamage = ninja._rangedAttackDamage;
-	_armorDamageReduction = ninja._armorDamageReduction;
-	_name = ninja._name;
+	if (this != &ninja)
+	{
+		std::cout << "<NinjaTrap>\n";
+		std::cout << "Assignation operator called" << std::endl;
+		_hitPoint = ninja._hitPoint;
+		_maxHitPoint = ninja._maxHitPoint;
+		_energyPoints = ninja._energyPoints;
+		_maxEnergyPoints = ninja._maxEnergyPoints;
+		_level =ninja._level;
+		_meleeAttackDamage = ninja._meleeAttackDamage;
+		_rangedAttackDamage = ninja._rangedAttackDamage;
+		_armorDamageReduction = ninja._armorDamageReduction;
+		_name = ninja._name;
+	}
 
 	return *this;
 }

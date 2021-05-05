@@ -34,6 +34,11 @@ FragTrap::FragTrap(std::string name)
 	std::cout << _name << ": \"제 1원칙: 인류를 보호한다! 제 2원칙: 온 힘을 다 해 잭에게 복종한다. 제 3원칙: 땐스!\n\"" << _name << "이(가) 생성되었습니다.\n" << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap& from)
+{
+	*this = from;
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << _name << ": \"난 죽었다! 난 죽었어 오 하나님 맙소사 난 죽었어!\n\"" << _name << "이(가) 파괴되었습니다.\n" << std::endl;
@@ -41,16 +46,19 @@ FragTrap::~FragTrap()
 
 FragTrap	&FragTrap::operator = (const FragTrap &frag)
 {
-	std::cout << "Assignation operator called" << std::endl;
-	_hitPoint = frag._hitPoint;
-	_maxHitPoint = frag._maxHitPoint;
-	_energyPoints = frag._energyPoints;
-	_maxEnergyPoints = frag._maxEnergyPoints;
-	_level =frag._level;
-	_meleeAttackDamage = frag._meleeAttackDamage;
-	_rangedAttackDamage = frag._rangedAttackDamage;
-	_armorDamageReduction = frag._armorDamageReduction;
-	_name = frag._name;
+	if (this != &frag)
+	{
+		std::cout << "Assignation operator called" << std::endl;
+		_hitPoint = frag._hitPoint;
+		_maxHitPoint = frag._maxHitPoint;
+		_energyPoints = frag._energyPoints;
+		_maxEnergyPoints = frag._maxEnergyPoints;
+		_level =frag._level;
+		_meleeAttackDamage = frag._meleeAttackDamage;
+		_rangedAttackDamage = frag._rangedAttackDamage;
+		_armorDamageReduction = frag._armorDamageReduction;
+		_name = frag._name;
+	}
 
 	return *this;
 }

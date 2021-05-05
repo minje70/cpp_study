@@ -2,6 +2,7 @@
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
 
+// 닌자 상속
 int main()
 {
 	NinjaTrap a = NinjaTrap("mijeong");

@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
+// 상속 시작
 int main()
 {
 	FragTrap a = FragTrap("mijeong");
@@ -22,6 +23,7 @@ int main()
 	a.vaulthunter_dot_exe("kilee");
 	a.vaulthunter_dot_exe("kilee");
 
+	std::cout << "*********************************************************************************" << std::endl;
 	ScavTrap aa("스카브");
 	ScavTrap *bb;
 
@@ -41,6 +43,7 @@ int main()
 	aa.challengeNewcomer();
 	aa.challengeNewcomer();
 
+	std::cout << "*********************************************************************************" << std::endl;
 	ClapTrap aaa("클랩");
 	ClapTrap *bbb;
 
