@@ -26,6 +26,7 @@ int main()
 	ScavTrap	scav;
 	NinjaTrap	ninja;
 	
+	a.putStatus();
 	a.ninjaShoebox(clap);
 	a.ninjaShoebox(frag);
 	a.ninjaShoebox(scav);

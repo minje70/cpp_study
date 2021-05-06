@@ -15,7 +15,7 @@ SuperTrap::SuperTrap(): FragTrap(), NinjaTrap()
 	std::cout << "\"트랩 끝판왕 SuperTrap!!, 이름은 없다!!\"\n" << _name << "이(가) 생성되었습니다.\n" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name): ClapTrap(name), FragTrap(name), NinjaTrap(name)
+SuperTrap::SuperTrap(std::string name): FragTrap(name), NinjaTrap(name)
 {
 	_hitPoint = 100;
 	_maxHitPoint = 100;
@@ -77,5 +77,6 @@ void	SuperTrap::putStatus()
 	std::cout << "maxHitPoint : " << this->_maxHitPoint << std::endl;
 	std::cout << "energyPoint : " << this->_energyPoints << std::endl;
 	std::cout << "maxEnergyPoints : " << this->_maxEnergyPoints << std::endl;
+	std::cout << "meleeAttackDamage : " << this->_meleeAttackDamage << std::endl;
 	std::cout << std::endl;
 }

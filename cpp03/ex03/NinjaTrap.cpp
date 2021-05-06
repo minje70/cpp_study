@@ -5,6 +5,7 @@ NinjaTrap::NinjaTrap(): ClapTrap()
 	_hitPoint = 60;
 	_maxHitPoint = 60;
 	_maxEnergyPoints = 120;
+	_energyPoints = 120;
 	_meleeAttackDamage = 60;
 	_rangedAttackDamage = 5;
 	_armorDamageReduction = 0;
@@ -74,4 +75,14 @@ void	NinjaTrap::ninjaShoebox(const FragTrap& frag)
 void	NinjaTrap::ninjaShoebox(const ScavTrap& scav)
 {
 	std::cout << "<scav>를 인자로 가지는 ninjashoebox!!!" << scav.getName() << std::endl;
+}
+
+void	NinjaTrap::putStatus()
+{
+	std::cout << "name : " << this->_name << std::endl;
+	std::cout << "maxHitPoint : " << this->_maxHitPoint << std::endl;
+	std::cout << "energyPoint : " << this->_energyPoints << std::endl;
+	std::cout << "maxEnergyPoints : " << this->_maxEnergyPoints << std::endl;
+	std::cout << "meleeAttackDamage : " << this->_meleeAttackDamage << std::endl;
+	std::cout << std::endl;
 }

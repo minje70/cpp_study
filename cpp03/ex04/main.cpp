@@ -9,6 +9,9 @@ int main()
 	NinjaTrap	*ninja;
 	SuperTrap	super2("mijeong");
 
+	std::cout << "*****" << super.getName() << "*****" << std::endl;
+	super.putStatus();
+	std::cout << "*****" << super2.getName() << "*****" << std::endl;
 	super2.putStatus();
 	ninja = &super;
 	super.meleeAttack("mijeong");

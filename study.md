@@ -28,6 +28,9 @@
 
 ### 궁금한 것
 
+### 공부
+- [다중상속 virtual 쓰는 이유](https://www.kdata.or.kr/info/info_04_view.html?field=&keyword=&type=techreport&page=12&dbnum=185561&mode=detail&type=techreport)
+
 
 
 ## cpp04

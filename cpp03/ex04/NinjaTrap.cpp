@@ -5,6 +5,7 @@ NinjaTrap::NinjaTrap(): ClapTrap()
 	_hitPoint = 60;
 	_maxHitPoint = 60;
 	_maxEnergyPoints = 120;
+	_energyPoints = 120;
 	_meleeAttackDamage = 60;
 	_rangedAttackDamage = 5;
 	_armorDamageReduction = 0;

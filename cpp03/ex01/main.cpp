@@ -21,7 +21,7 @@ int main()
 	a.vaulthunter_dot_exe("kilee");
 	a.vaulthunter_dot_exe("kilee");
 	a.vaulthunter_dot_exe("kilee");
-
+	std::cout << "*************************************************************" << std::endl;
 	ScavTrap aa("스카브");
 	ScavTrap *bb;
 
@@ -34,6 +34,7 @@ int main()
 	aa.takeDamage(30);
 	aa.beRepaired(150);
 
+	std::cout << "*************************************************************" << std::endl;
 	delete bb;
 	aa.challengeNewcomer();
 	aa.challengeNewcomer();

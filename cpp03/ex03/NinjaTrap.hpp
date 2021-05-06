@@ -20,6 +20,8 @@ public:
 	void	ninjaShoebox(const ClapTrap& clap);
 	void	ninjaShoebox(const FragTrap& frag);
 	void	ninjaShoebox(const ScavTrap& scav);
+
+	void	putStatus();
 };
 
 #endif
