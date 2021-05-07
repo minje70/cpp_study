@@ -44,6 +44,7 @@ void	Enemy::takeDamage(int damage)
 		realDamage = _hitPoint;
 	else
 		realDamage = damage;
-	std::cout << "-" << realDamage << std::endl;
+	if (getHP() <= 0)
+		delete (this);
 	_hitPoint -= realDamage;
 }

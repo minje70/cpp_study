@@ -6,7 +6,8 @@
 class Squad: public ISquad
 {
 private:
-
+	int				_unitCount;
+	ISpaceMarine	**_iSpaceMarine;
 public:
 	Squad();
 	Squad(const Squad &from);

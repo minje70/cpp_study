@@ -8,9 +8,8 @@
 class Peon: public Victim
 {
 private:
-
-public:
 	Peon();
+public:
 	Peon(std::string name);
 	Peon(const Peon& peon);
 	~Peon();

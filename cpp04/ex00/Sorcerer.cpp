@@ -11,8 +11,7 @@ Sorcerer::Sorcerer(std::string name, std::string title): _name(name), _title(tit
 
 Sorcerer::Sorcerer(const Sorcerer& sorcerer)
 {
-	_name = sorcerer.getName();
-	_title = sorcerer.getTitle();
+	*this = sorcerer;
 }
 
 Sorcerer::~Sorcerer()
@@ -22,8 +21,11 @@ Sorcerer::~Sorcerer()
 
 Sorcerer& Sorcerer::operator = (const Sorcerer& sorcerer)
 {
-	_name = sorcerer.getName();
-	_title = sorcerer.getTitle();
+	if (&sorcerer != this)
+	{
+		_name = sorcerer.getName();
+		_title = sorcerer.getTitle();
+	}
 	return *this;
 }
 

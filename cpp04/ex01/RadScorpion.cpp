@@ -23,6 +23,4 @@ RadScorpion& RadScorpion::operator = (const RadScorpion& RadScorpion)
 void	RadScorpion::takeDamage(int damage)
 {
 	Enemy::takeDamage(damage);
-	if (this->getHP() <= 0)
-		std::cout << "* SPROTCH *" << std::endl;
 }

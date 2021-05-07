@@ -38,7 +38,7 @@ void AssaultTerminator::battleCry() const
 
 void AssaultTerminator::rangedAttack() const
 {
-	std::cout << "*does nothing *" << std::endl;
+	std::cout << "* does nothing *" << std::endl;
 }
 
 void AssaultTerminator::meleeAttack() const

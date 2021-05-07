@@ -23,6 +23,4 @@ SuperMutant& SuperMutant::operator = (const SuperMutant& superMutant)
 void	SuperMutant::takeDamage(int damage)
 {
 	Enemy::takeDamage(damage - 3);
-	if (this->getHP() <= 0)
-		std::cout << "Aaaargh" << std::endl;
 }

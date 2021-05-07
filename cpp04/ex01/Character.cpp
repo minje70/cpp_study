@@ -47,14 +47,16 @@ void	Character::equip(AWeapon* weapon)
 
 void	Character::attack(Enemy* enemy)
 {
-	if (_weapon == NULL)
+	if (_weapon == NULL || enemy == NULL)
 		return ;
 	if (_weapon->getAPCost() > _actionPoint)
 		std::cout << "AP가 부족합니다." << std::endl;
 	else
 	{
 		std::cout << _name << " attacks " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
+		_weapon->attack();
 		_actionPoint -= _weapon->getAPCost();
+		enemy->takeDamage(_weapon->getDamage());
 	}
 	if (enemy->getHP() <= 0)
 		delete enemy;

@@ -17,7 +17,8 @@ Peon::~Peon()
 
 Peon& Peon::operator = (const Peon& peon)
 {
-	Victim::operator=(peon);
+	if (&peon != this)
+		Victim::operator=(peon);
 	return *this;
 }
 
