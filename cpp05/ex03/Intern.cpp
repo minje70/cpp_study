@@ -45,7 +45,7 @@ Form* Intern::makeForm(std::string name, std::string target)
 			return three_func[i](target);
 	}
 	throw Intern::MakeFailException();
-	return NULL;
+	// return NULL;
 }
 
 const char* Intern::MakeFailException::what() const throw()

@@ -41,7 +41,7 @@ int main()
 	// }
 	// catch(const std::exception& e)
 	// {
-	// 	std::cerr << e.what() << '\n';
+	// 	std::cout << e.what() << '\n';
 	// }
 
 	// // 예외사항.
@@ -93,26 +93,24 @@ int main()
 	{
 		std::cout << e.what() << '\n';
 	}
-	
+	std::cout << "**************************************************" << std::endl;
 	try
 	{
 		Intern someRandomIntern;
 		Form* rrf;
 		rrf = someRandomIntern.makeForm("PresidentialPardonForm", "mijeong");
-		std::cout << "***" << std::endl;
 		std::cout << *rrf << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cout << e.what() << '\n';
 	}
-
+	std::cout << "**************************************************" << std::endl;
 	try
 	{
 		Intern someRandomIntern;
 		Form* rrf;
 		rrf = someRandomIntern.makeForm("RobotomyRequestForm", "kilee");
-		std::cout << "***" << std::endl;
 		std::cout << *rrf << std::endl;
 	}
 	catch(const std::exception& e)

@@ -63,12 +63,12 @@ void	Bureaucrat::decrement()
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Error: Grade Too hight!!\n");
+	return ("Error: Grade Too hight!!");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Error: Grade Too low!!\n");
+	return ("Error: Grade Too low!!");
 }
 
 void	Bureaucrat::signForm(Form& form)

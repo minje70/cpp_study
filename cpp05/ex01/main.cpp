@@ -19,13 +19,14 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 
-	// 예외사항.
+	std::cout << "*****************************************************" << std::endl;
+	// 예외사항. 
 	try
 	{
-		Form form("form", 160, -1);
+		Form form("form", 130, -1);
 		Bureaucrat a("mijeong", 2);
 
 		std::cout << "***form***\n" << form << std::endl;
@@ -37,7 +38,24 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
+	}
+	std::cout << "*****************************************************" << std::endl;
+	try
+	{
+		Form form("form", 50, 30);
+		Bureaucrat a("mijeong", 100);
+
+		std::cout << "***form***\n" << form << std::endl;
+		std::cout << "***mijeong***\n" << a << std::endl;
+
+		a.signForm(form);
+		std::cout << "***after form***\n" << form << std::endl;
+		std::cout << "***after mijeong***\n" << a << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << '\n';
 	}
 	return 0;
 }

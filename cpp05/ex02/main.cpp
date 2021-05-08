@@ -6,9 +6,9 @@
 
 int main()
 {
-	PresidentialPardonForm presidential("mijeong");
-	RobotomyRequestForm  robo("hyeonkim");
-	ShrubberyCreationForm shrubbery("kilee");
+	PresidentialPardonForm presidential("presi");
+	RobotomyRequestForm  robo("robo");
+	ShrubberyCreationForm shrubbery("shru");
 	Form *form;
 	// 정상동작.
 	try
@@ -19,30 +19,26 @@ int main()
 		std::cout << "***presiential***\n" << *form << std::endl;
 		std::cout << "***mijeong***\n" << a << std::endl;
 
-		std::cout << "***after form***\n" << *form << std::endl;
-		std::cout << "***after mijeong***\n" << a << std::endl;
-
 		std::cout << "***presidential execute***\n";
 		a.signForm(*form);
 		presidential.execute(a);
-		a.signForm(robo);
 		std::cout << std::endl;
-
 
 		std::cout << "***robotomy execute***\n";
 		a.signForm(robo);
 		robo.execute(a);
 		std::cout << std::endl;
 
+		std::cout << "***shrubbery execute***\n";
 		a.signForm(shrubbery);
-		std::cout << "***shrubbery***\n";
 		shrubbery.execute(a);
+		std::cout << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
-
+	std::cout << "******************************************************************************************************" << std::endl;
 	// 예외사항.
 	try
 	{
@@ -62,7 +58,7 @@ int main()
 	{
 		std::cout << e.what() << '\n';
 	}
-
+	std::cout << "******************************************************************************************************" << std::endl;
 	try
 	{
 		Bureaucrat a("mijeong", 60);

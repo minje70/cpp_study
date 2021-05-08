@@ -14,6 +14,7 @@ void	checkException(int	signedGrade, int execGrade)
 
 Form::Form(): _name("noname"), _signedGrade(1), _execGrade(1)
 {
+	checkException(_signedGrade, _execGrade);
 	_signed = false;
 }
 
@@ -47,11 +48,11 @@ Form		&Form::operator=(const Form &rvalue)
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return "Error: Grade Too hight!!\n";
+	return "Error: Grade Too hight!!";
 }
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return "Error: Grade Too low!!\n";
+	return "Error: Grade Too low!!";
 }
 
 void	Form::beSigned(Bureaucrat& bureaucrat)
