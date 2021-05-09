@@ -10,7 +10,7 @@
 
 A::~A()
 {
-	std::cout << "Aase 해제!!!" << std::endl;
+	std::cout << "A 해제!!!" << std::endl;
 }
 
 // A		&A::operator=(const A &rvalue)

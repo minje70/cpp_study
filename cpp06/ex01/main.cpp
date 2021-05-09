@@ -22,7 +22,7 @@ void * serialize(void)
 	*n = rand() % 1000;
 
 	*(reinterpret_cast<std::string *>(raw)) = *s1;
-	*(reinterpret_cast<int *>(raw) + 6) = *n;
+	*(reinterpret_cast<int *>(raw + 24)) = *n;
 	*(reinterpret_cast<std::string *>(raw + 28)) = *s2;
 
 	delete s1;
@@ -48,6 +48,9 @@ void	printData(const struct Data& data)
 	std::cout << "s1 : " << data.s1 << std::endl;
 	std::cout << "n : " << data.n << std::endl;
 	std::cout << "s2 : " << data.s2 << std::endl;
+	std::cout << "s1 주소 : " << &data.s1 << std::endl;
+	std::cout << "n 주소 : " << &data.n << std::endl;
+	std::cout << "s2 주소 : " << &data.s2 << std::endl;
 }
 
 int main()
