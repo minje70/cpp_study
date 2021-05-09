@@ -41,7 +41,7 @@ void	StringCast::printChar() const
 		if (isnan(result) || result < CHAR_MIN || result > CHAR_MAX)
 			throw StringCast::ImpasibleException();
 		if (result == 127 || (result >= 0 && result <= 31))
-			std::cout << "non displayable" << std::endl;
+			std::cout << "Non displayable" << std::endl;
 		else
 			std::cout << "\'" << static_cast<char>(result) << "\'" << std::endl;
 	}
@@ -75,9 +75,9 @@ void	StringCast::printFloat() const
 	{
 		result = atof(_value.c_str());
 		std::cout << "float: ";
-		if (result > std::numeric_limits<float>::max()
-			|| result < std::numeric_limits<float>::min())
-			throw StringCast::ImpasibleException();
+		// if (result > __FLT_MAX__
+		// 	|| result < __FLT_MIN__)
+		// 	throw StringCast::ImpasibleException();
 		std::cout << static_cast<float>(result);
 		if (static_cast<float>(result) - static_cast<int>(result) == 0)
 			std::cout << ".0";
@@ -96,9 +96,6 @@ void	StringCast::printDouble() const
 	{
 		result = atof(_value.c_str());
 		std::cout << "double: ";
-		if (result > std::numeric_limits<double>::max()
-			|| result < std::numeric_limits<double>::min())
-			throw StringCast::ImpasibleException();
 		std::cout << result;
 		if (static_cast<float>(result) - static_cast<int>(result) == 0)
 			std::cout << ".0";
