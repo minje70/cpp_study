@@ -42,15 +42,18 @@ struct Data* deserialize(void *raw)
 	return data;
 }
 
-
-void	printData(const struct Data& data)
+void	printData(const struct Data& data, void *voidPtr)
 {
-	std::cout << "s1 : " << data.s1 << std::endl;
-	std::cout << "n : " << data.n << std::endl;
-	std::cout << "s2 : " << data.s2 << std::endl;
-	std::cout << "s1 주소 : " << &data.s1 << std::endl;
-	std::cout << "n 주소 : " << &data.n << std::endl;
-	std::cout << "s2 주소 : " << &data.s2 << std::endl;
+	char *temp = reinterpret_cast<char *>(voidPtr);
+
+	std::cout << "***data***" << "\n";
+	std::cout << "s1 : " << data.s1 << "\n";
+	std::cout << "n : " << data.n << "\n";
+	std::cout << "s2 : " << data.s2 << "\n\n";
+	std::cout << "***voidPtr***\n";
+	std::cout << "s1 : " << *reinterpret_cast<std::string *>(temp) << "\n";
+	std::cout << "n : " << *reinterpret_cast<int *>(temp + 24) << "\n";
+	std::cout << "s2 : " << *reinterpret_cast<std::string *>(temp + 28) << "\n";
 }
 
 int main()
@@ -61,6 +64,6 @@ int main()
 	srand(time(NULL));
 	voidPtr = serialize();
 	data = deserialize(voidPtr);
-	printData(*data);
+	printData(*data, voidPtr);
 	return 0;
 }

@@ -75,9 +75,9 @@ void	StringCast::printFloat() const
 	{
 		result = atof(_value.c_str());
 		std::cout << "float: ";
-		// if (result > __FLT_MAX__
-		// 	|| result < __FLT_MIN__)
-		// 	throw StringCast::ImpasibleException();
+		if (result > __FLT_MAX__
+			|| result < -__FLT_MAX__)
+			throw StringCast::ImpasibleException();
 		std::cout << static_cast<float>(result);
 		if (static_cast<float>(result) - static_cast<int>(result) == 0)
 			std::cout << ".0";
@@ -104,5 +104,5 @@ void	StringCast::printDouble() const
 	catch(const std::exception& e)
 	{
 		std::cout << e.what() << '\n';
-	}	
+	}
 }
