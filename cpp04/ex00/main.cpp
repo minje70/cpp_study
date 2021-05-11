@@ -3,19 +3,6 @@
 #include "Peon2.hpp"
 #include "Peon.hpp"
 
-// int main()
-// {
-// 	Sorcerer sorcerer("mijeong", "the greatest developer");
-// 	Victim victim("hyeonski");
-// 	Peon	peon("hyeonkim");
-
-// 	std::cout << "***victim***" << std::endl;
-// 	sorcerer.polymorph(victim);
-// 	std::cout << "***peon***" << std::endl;
-// 	sorcerer.polymorph(peon);
-// 	return 0;
-// }
-
 int main()
 {
 	{
