@@ -25,11 +25,13 @@ public:
 	{
 		virtual const char * what() const throw();
 	};
-
+	class OverNumberException: public std::exception
+	{
+		virtual const char * what() const throw();
+	};
 
 	void addNumber(int number);
 	unsigned int shortestSpan();
 	unsigned int longestSpan();
 };
-
 #endif

@@ -65,6 +65,10 @@
 		"random": "cpp",
 		"deque": "cpp",
 		"fstream": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"filesystem": "cpp",
+		"set": "cpp",
+		"__tree": "cpp",
+		"list": "cpp"
 	}
 }
